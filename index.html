@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Philosophical Perspective Test&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body { font-family: Arial, sans-serif; margin: 20px; padding: 0; background: #f4f4f4; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1 { text-align: center; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.question { background: white; padding: 15px; margin: 15px auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 600px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.options label { display: block; margin: 5px 0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button { display: block; margin: 20px auto; padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button:hover { background: #0056b3; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>#result { max-width: 600px; margin: 20px auto; padding: 20px; background: #e9ffe9; border-radius: 8px; display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Philosophical Perspective Test&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="quiz"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="submitQuiz()"&gt;Submit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="result"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const questions = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"What best describes the meaning of life?",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"When life feels overwhelming, you think:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"What is the ultimate source of knowledge?",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Morality is:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Role of emotions in life:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"The universe is:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Reality is:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Most important human goal:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Culture and society are:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Best path to truth:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Humans are:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Reason is:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Freedom is:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"History shows:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Nature is:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Morality comes from:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Truth depends on:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Happiness comes from:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Values should be:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Life’s purpose is:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Ethics are:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Society evolves by:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Reality shaped by:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Knowledge should be:",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Ultimately, life is:"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const options = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["No inherent meaning; we create our own","Meaning comes from higher ideals","Shaped by culture and society","Life is absurd/meaningless"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Endure and live ethically","Find personal freedom in choice","Everything follows cause/effect","Embrace emotion and creativity"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Science and empirical evidence","Moral reasoning","Social and cultural constructs","Personal experience"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Universal and unchanging","Individually chosen","Socially constructed","Doesn’t really exist objectively"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Central to meaning","Secondary to reason","Shaped by society","Untrustworthy"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Ordered and rational","Random and meaningless","Created by God","Indifferent but real"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Physical and objective","Constructed by minds","Unknowable","Subjective experience"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Moral perfection","Personal freedom","Scientific progress","Creativity and art"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Deterministic structures","Changing human agreements","Oppressive forces","Guides for meaning"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Science","Philosophy","Art","Introspection"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Free and responsible","Determined by biology","Socially made","Spiritually transcendent"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Path to truth","Tool for survival","Socially biased","One option among many"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Absolute","An illusion","Indispensable","Socially limited"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Progress toward freedom","Cycles without meaning","Moral improvement","Material development"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Sacred","Material","Symbolic","Unknown"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Divine command","Human reason","Cultural tradition","Personal choice"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Universal","Relative","Constructed","Practical"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Pleasure","Achievement","Authenticity","Faith"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Universal","Relative","Socially defined","Personal"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Serve others","Self-define","Discover truth","Create beauty"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Absolute","Relative","Contextual","Subjective"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Moral progress","Scientific discovery","Cultural struggle","Random events"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Language","Material conditions","God","Human perception"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Used for control","Used for progress","Shared freely","Self-focused"],</p>
+<p class="p1"><span class="Apple-converted-space">      </span>["Beautiful but pointless","A gift","Self-created","Unknowable"]</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const mapping = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Existentialist","Moralist","Naturalist","Romanticist"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const quizDiv = document.getElementById('quiz');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>questions.forEach((q, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.className = 'question';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>div.innerHTML = `&lt;h3&gt;Q${i+1}: ${q}&lt;/h3&gt;` + options[i].map((opt,j)=&gt;`</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;&lt;input type='radio' name='q${i}' value='${j}'&gt; ${opt}&lt;/label&gt;`).join('');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>quizDiv.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function submitQuiz(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let scores = {Existentialist:0, Moralist:0, Naturalist:0, Romanticist:0};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>questions.forEach((_,i)=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let checked = document.querySelector(`input[name='q${i}']:checked`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(checked){</p>
+<p class="p1"><span class="Apple-converted-space">          </span>let idx = parseInt(checked.value);</p>
+<p class="p1"><span class="Apple-converted-space">          </span>scores[mapping[idx]]++;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let top = Object.keys(scores).sort((a,b)=&gt;scores[b]-scores[a])[0];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('result').style.display='block';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('result').innerHTML = `&lt;h2&gt;Your closest perspective: ${top}&lt;/h2&gt;&lt;p&gt;Scores: ${JSON.stringify(scores)}&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
